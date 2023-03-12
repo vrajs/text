@@ -1,0 +1,88 @@
+/ nai lakhvanu eni jate lai leOnly Path And COmponent name(Home-->About)
+je path ma lakhyu e j ROuterLink ma naitar Error
+
+Dynamic Routing-->
+e.g Update--->5 vala id ne toh url ma /Update/5 jase toh 5---> Dynamic Routing
+
+Je Page nathi tene Access (Invalid Url)---> 404 Error
+
+app-->About--->About Me-->child page ni andar pacchi link (& biju pge khule)--->Child Routing
+
+Service-->Ek jat no class Jema data,Property & FUnctions & aa data ne Multiple Files ma use
+
+Content-type ma lakh je mujab no data send karvo hou\y e Angular header ma 
+
+for e.g List Of Students ne 50 Pages Par dekhadvu chhe toh 
+Service Banay & Te Service ne Multiple Components ma Use kar
+
+Service ma je Fun banayu tene jya b  Use karvu hoy tya Import karvu pade
+
+Jo bahar na folder ma toh --->>'../services/user-data-service.service'
+
+Service-->Api Call--->Api(Database mathi data lave)
+Angular Koi divas Database Jode Connect na thai sake So must have to use Api
+
+Api koi b language ma php,python,.net .....
+Service ma HttpModule hoy te Api ne cal  kare  mate Import kar HttpModule -->Service ma
+
+app.module.ts 
+
+import {HttpClientModule} from '@angular/common/http'
+
+//For Service -->Api call-
+(1)api-call.service.ts ,
+(2)app.component.ts ma and 
+(3)app.component.html 
+(4) app.module.ts 
+no code jo
+
+//For Routing
+(1)api-call.service.ts ,
+(2)app.component.ts ma and 
+(3)app.component.html 
+(4) app.module.ts 
+(5) app-roting.module.ts
+no code jo
+  
+  Service no data te j Component ma jay Bija nakama 
+  Components ma na jay----> Etle Subscribe Lakh
+  
+Jo FormModule import karvanu Bhuli gyo app.module.ts ma to toh From Chalse j nai
+
+Model-->Data nu structure and validate kare
+
+for e.g id ma int j javu joie (validate)
+
+te Model / Interface ek seperate file ma banay etle pachhi 500 file ma same interface 
+import karine use kari sakay , 500 file ma lakhvani jarur nai
+
+koi vastu ne bahar b use karvani hoy toh teni aagal Export lagad
+
+vichitra mota mota name na aap module and components na naitar kasu nai chale???? ()and 
+
+be yaar error aayi alya Because app.module.ts ma te module/Component import karelo j nathi
+Module Ni Andar Component banave tyre
+
+be yaar haju error aayi , ALya toh te module ni andar Export nathi karelo Component
+Export vagar import na thai sake
+
+child ma jagya Chooti jay toh Global style ma 
+body{
+margin: 0 
+}
+Aap
+
+ek var header Component banai didho etle pati gyo
+same Component 500 page ma ReUse
+<app-header></app-header>
+
+//Angular Form
+SecondProject ma app(component) ma Form no code
+
+Ahi hu app component ma Form banavu chhu Etle app.module.ts ma Form Module Add kar
+koi bija module ma Add karvu hoy toh tena module.ts ma Add kar
+
+koi Element par click ke hover karie tyare vare 
+ghadie koik vastu ne Show/Hide karvu--->Toggle
+
+*ngIf j vapar , style.display nai

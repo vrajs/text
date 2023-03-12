@@ -1,0 +1,118 @@
+WebApiConfig.cs 
+
+config.EnableCors();
+config.MapHttpAttributeRoutes();
+
+
+Before class in Api Controller
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+
+
+Migration
+
+if error then remove all tables and Migration folder
+
+ this.TokenData =  localStorage.getItem('tokenValue')
+    const authReq = req.clone({
+       
+        headers: req.headers.set('Authorization', `Bearer ${this.TokenData}`).append('Access-Control-Allow-Origin', '*').append('Access-Control-Allow-Headers', '*') .set('content-type', 'application/json')
+      });
+      return next.handle(authReq);
+
+
+MyCustomMiddleware
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
+
+namespace StudentManagement
+{
+    // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
+    public class MyCustomMiddleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly ILogger _logger;
+
+        public MyCustomMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)
+        {
+            _next = next;
+            _logger = loggerFactory.CreateLogger("MyCustomMiddleware");
+            _logger.LogInformation("Custom Middleware is started");
+        }
+
+        public async Task Invoke(HttpContext httpContext)
+        {
+            _logger.LogInformation("Custom Middleware is Executed");
+             await _next.Invoke(httpContext);
+        }
+    }
+
+    // Extension method used to add the middleware to the HTTP request pipeline.
+    public static class MyCustomMiddlewareExtensions
+    {
+        public static IApplicationBuilder UseMyCustomMiddleware(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<MyCustomMiddleware>();
+        }
+    }
+}
+
+public Task<List<EmployeeDto>> GetEmployees()
+        {
+           var a= (from db in _studentDBContext.Departments
+                   join st in _studentDBContext.Employees
+                   on db.Id equals st.departmentId
+                              select new EmployeeDto
+                              {
+                                  Id = st.Id,
+                                  Firstname = st.Firstname,
+                                  Name = db.Name,
+                                  departmentId = db.Id,
+                                  Location = db.Location,
+                                  LastName = st.LastName,
+                                  Gender =  st.Gender
+                              }).ToListAsync();
+            return a;
+        }
+
+
+return applicationDbContext.Authors.Select(c=> new Author()
+                {
+                    Id = c.Id,
+                    FirstName = c.FirstName
+                }).ToList();
+
+
+<!-- <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">LastName</th>
+          <th scope="col">Email</th>
+          <th scope="col">Course</th>
+          <th width="220px">Action</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let post of students; index as i">
+        <th scope="row">{{ ++i + 1 }}</th>
+        <td>{{ post.firstName }}</td>
+        <td>{{ post.lastName }}</td>
+        <td>{{ post.email }}</td>
+        <td>{{ post.course }}</td>
+        <td>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+              <button type="button" (click)="navigateToEdit(post.studentId)" class="editbtn">Edit</button>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <button type="button" (click)="deleteStudent(post.studentId)" class="deletebtn">Delete</button>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </td>
+      </tr>
+    </table> -->

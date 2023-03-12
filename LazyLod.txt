@@ -1,0 +1,10 @@
+1000 Page toh Website Start vakhte 1000 Routes Load 
+etle WebSite Slow in First load
+
+Lazy Load ma je Link(Route) par click tej Module no route khule
+So Fast Speed
+
+Lazy load vakhte app.module.ts ma te Module import na kar
+
+lazy Load Component nathi Joyo Video because module j load nai thay toh 
+teni andar no component kyathi load thavano???

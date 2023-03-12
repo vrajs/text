@@ -1,0 +1,205 @@
+i am going for lunch ,till now i was  Referring Docs
+I am leaving for the day. I will continue tomorrow
+
+set NODE_OPTIONS=--max_old_space_size=8192
+For Key/Critical Deliverable Step Generate Required table, Make UI ,and apply backend logic ,so that is Baseline Plan we should able to Create, Update ,Delete, Read Key critical deliveries
+
+Today's Log
+========
+   - Understand project Report setting , from where it Report UI is Coming, from where it sends the Report.
+   - The whole Setting Come from Report Generation Interval. So i have dependency on it.So Currently it is on hold
+   - Added task in Devops With Description
+   - Started Watching KT Videos for Delivery Review
+   
+   
+   1. Custom settings - Company's rule for payment terms. Spelling error - 'submiited'  :  @vraj 
+   2. Could you please verify in entire application, all date pickers have 'Today' button and it is working in all pages
+   
+   3. In letters there is a phone number field, that number should be in UK format. 
+   
+   4. Another task is a UI related one. In the login there is a register option. 
+		if u select any of the editions in the next page a modal pop up will show
+   
+   5. If header and footer are not aligned correctly you will need to align the header and footer  other wise
+      first page will be a blank one
+	  Could you please verify the maximum header height and footer height 
+	  
+   6. Host admin has a dashboard right? you need to move that page under administration
+   
+   7. In host admin role, there is a review button, if u click on that it will redirect to review page
+      there is an option to upload a document (review document)  <---- Make this as non Mandatory
+   
+   8. If a tenant admin login for the first time he has to follow some steps,
+      if he didn't do any of these , there should always a pop up to remind him on load
+   
+   9. After Setting Commitment Recipt Date while Creating Project from Any Of Service, After Clicking On that Project 
+      Commitment Recipt Date Should Auto Populated
+   
+   10. Add Plus icon in each Card Of tenant DashBoard
+       and Align the Tool Tip Correctly
+   11. Solve All Errors regarding Customer, Project ,Site ,Mappings, actAsAgentResponse, 
+       oA1LetterRequest, paymentTermResponse in all 4 Services
+
+   12. Check IsAdmin Role or Not Before Showing Reminder PopUp For Uploading Stationary & Logo
+   
+   13. Test all 4 Service's Review and CreateOrEdit Pages if it is doing all CRUD Operations Or Not
+   
+   14. Write a Logic to AutoComplete CustomerName in Letter Edit Page
+   
+   15. Make Change in UpdateCurrentUserProfile API to store Latest uploaded Signature Bytes 
+       and do Small UI Change to hide Div On Sign Upload Option selected 
+	   
+   16. Start Watching KT videos and Product Documentation	 
+   17. Solve Some Small Issues On Call With Vineeth Sir Regarding System-DashBoard,
+       Sitename AutoCome and PopUp Ahead Of The Grid
+
+   18. Solve Issues Regarding Validation Messages On UI
+   19. Set Tooltip Correctly in DashBoard
+   
+   20. Make Change in AddOrUpdateComments API to Resolve Comments Issue
+   21. Testing of Application
+   
+   22. Add 3 Fields (Legal Name, Address & Tax/VatNo) While Doing Registration through Partner Edition and
+		 Show them in ReadOnly Mode in Partner Details
+   23. Made UI Side Changes ,Model & API Side Changes and Through 
+		 Migration Add 3 fields in CSADetails Table
+	
+   24. Set the Button in Reset Mode in ActAsAgent And OrderReview Services
+		After Closing Additional Service Pop-Up
+   25. Removed Errors In Additional Service Modal PopUp
+   
+   26. Watch One KT video & Read Product econsys Documentation 
+   27. Set All ngModel Fields in UI According to TenantBillingSettingsEditDto
+   
+   28. Apply Logic of Set readonly false to Invoice Information on Create New tenant and readonly true on Partner Details
+   29. Solve Errors in Create-Tenant-Modal Component
+   
+   30. Hide IsTrial period and Subscription end Date on Change Dropdown to Partner Edition
+   31. Test Save Button Disable untill all Required Fields fill Up and after delete User check all fields in AbpUsers
+   
+   32. Write Code to go to Partner Details On csaDetails Operations and Redirect to admin/Tenants on Create Tenant Operations
+   33. Change Address labels in Create Tenant Modal and Register tenant
+   
+   34. Write Logic in all 4 Service Apis even if We Delete User, all it's projects and Customer Info. must come in Grid
+   35. On Esc key Press Additional Service PopUp Open button in No mode
+
+   36. Create Logic in Api In Create Mode Deleted Stationary Won't be shown in Dropdown & On Edit Mode it will be shown
+
+   37. Solve the Issue Of Tenant Modal Not Opening After Close
+
+   38. Set the width and Space Styling of all Toggle Buttons and Set it's State
+   39. Change in all 4 service Apis to disable SoftDelete, Now we also getting userName of Deleted users also
+
+   40. Check in PartnerDetails duplicate records are coming or not ,& give Solution to Vineeth Sir on Call regarding 
+       Distinct
+   
+   41. Gave Links in Reminder PopUp of  reminders like Upload Logo, Upload Stationary....
+   42. Created Logic for all Services If Project Status is Completed or Downloaded then Congrats msg for Completing this Service Will show otherwise Not
+   
+   43. Update Logic in API that in Additional Service Modal, all Services should come According to ServiceId
+   
+   44. Apply code to Open Profile Modal from PopUP and give green Tick on Complete and Gave Click here link for going to Appropriate place
+   
+   45. Write Code to Show Warning Message If Stationary count is zero on create new letter
+   46. Completed Designing & Styling Of PopUp ,Put all Content in Same table Manner
+   
+   47. Update Logic For getting Service Name And Status In Additional Service Component because due to Url it cause issues in Email
+   
+   48. Currently Doing in Order Analysis why newely uploaded documents not showing and doing Research to solve console Errors
+   49. Solve Issue Of Profile Modal Not Opening From Reminder
+   
+   50. Started reading & Understanding about elsa Workflow
+   51. Attended KT Session
+   
+   
+   
+   
+   (new System.Collections.Generic.IDictionaryDebugView<string, string>(((Elsa.Activities.Http.Models.HttpRequestModel)context.Input).QueryString).Items[0]).Value
+   
+oA1LetterRequest
+
+ Incomplete = 0,
+    Generated = 1,
+    Emailed = 2,
+    Downloaded = 3,
+    Approved = 5,
+}
+
+OrderReview
+
+ Locked = 0,
+    Requested = 1,
+    Completed = 2,
+    Subscribed = 3,
+    InProgress = 4,
+    ApprovalPending = 5,
+
+   ActAsAgent
+   
+   Locked = 0,
+    Requested = 1,
+    Completed = 2,
+    Subscribed = 3,
+    InProgress = 4,
+    ApprovalPending = 5,
+   
+   
+	   Today's Log
+===============================
+- Create Logic in Api In Create Mode Deleted Stationary Won't be shown & On Edit Mode it will be shown
+
+- Solve the Issue Of Tenant Modal Not Opening After Close
+
+- Set the width and Space Styling of all Toggle Buttons and Set it's State
+- Change in all 4 service Apis to disable SoftDelete, Now we also getting userName of Deleted users also
+
+- Check in PartnerDetails duplicate records are coming or not ,give Solution to Vineeth Sir on Call regarding Distinct
+- Giving links in Reminder PopUp of all reminders like Update Profile,Upload Logo,Upload Stationary....
+
+
+   AddInvoiceInfoFieldsInCSADetail
+   
+   createModal.hide() .html ma j 
+   
+Right now, I am leaving for the day. I Will continue tomorrow.
+
+pdfDocument.PageCount
+
+abp.event.trigger('app.show.mySettingsModal');
+
+   this.appSession.isAdminRole
+   
+   _sessionService.tenantId
+   this.item = new ..Dto();
+   this.item.billing = new ..Dto();
+   
+   [textMask]="{ mask: phoneMaskUk, modelClean: true }"
+
+var user = _lookup_userRepository.GetAll().Where(s => s.Id == Convert.ToInt32(o.CreatedBy));
+
+100px
+
+((Syncfusion.DocIO.DLS.WSection)stationeryDocument.Sections.FirstItem).HeadersFooters.Header.Count
+
+Angular--->Application 
+
+
+(1)DashBoard ma Filter valu 
+
+Dashboard ma Slow After date select(Alphabetic yyyy lakhay chhe)
+Close Modal then 2 sec hang
+Moving DatePicker
+
+(2)Login attempts ma b 
+
+(3)tenants (http://localhost:4200/app/admin/tenants) ma banne 
+
+6 Sept 2018/09/YYYY - 6 Sept 2018/09/YYYY
+
+(4) Notification ma b
+
+http://localhost:4200/app/admin/login-attempts
+
+app/admin/login-attempts.component....
+
+No such host is known. (rccsentineldevstr.blob.core.windows.net:443)

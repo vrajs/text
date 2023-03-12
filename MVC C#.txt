@@ -1,0 +1,242 @@
+Freeman_Spongli ma 
+Controller-->Service-->Repo
+
+
+EmployeeModel e1 = new EmployeeModel();
+            e1.EmployeeID = 101;
+            e1.LastName = "Sonoo Jaiswal";
+
+            List<EmployeeModel> em = new List<EmployeeModel>();
+            em.Add(e1);
+
+            em.Add(new EmployeeModel()
+            {
+                EmployeeID = 1,
+                LastName = "vs"
+            });
+
+List<List<string>> myList = new List<List<string>>();
+            myList.Add(new List<string> { "a", "b" });
+            myList.Add(new List<string> { "c", "d", "e" });
+            myList.Add(new List<string> { "qwerty", "asdf", "zxcv" });
+            myList.Add(new List<string> { "a", "b" });
+            foreach (List<string> subList in myList)
+            {
+                foreach (string item in subList)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
+:Controller
+:ApiController
+html nai .cshtml page asdd kar
+System.web.Mvc.HttpGet 
+names = []
+
+RouteConfig.cs
+App_Start mathi
+
+rotes.MapMvcAttributeRoutes();
+routes.MapRoute(
+                name: "Default3",
+                url: "hello",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Default2",
+                url: "test/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Default11",
+                url: "Home/Test/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+Error.cshtml Default Error page
+
+@Html.ActionLink("Content", "ContentFun", "Home")
+
+@section Scripts {  
+    @Scripts.Render("~/bundles/jqueryval")  
+}  
+ bundleConfig.cs
+
+return View()
+return RedirectToAction()
+return Json()
+
+
+base.show()
+
+int[] arr = new int[5];
+var a = new List<String>();
+
+enum
+(int)Months.April----> 3
+
+? -->null Chale
+
+null Reference Check kar
+
+
+    [Route(“~/NewMVCTest”)]  
+
+public async Task<IList<Student>> GetAllStudents()
+{
+            IList<Student> students = new List<Student>();
+            using (var ctx = new SchoolContext())
+            {
+                await Task.Run(() =>
+                {
+                    students = ctx.Students.ToList();
+                });
+                return students;
+            }
+}
+
+
+var sumSalary = Employee.Sum(a => a.Salary);  
+var SalaryMaxCount = Employee.Count(a => a.Salary >= 30000);  
+
+
+Ek var Tempdata ni value Access(get) thai jay pachhi remove
+mate For No Remove-->TempData.Keeep("");
+
+ TempData["name"] = "Bill";
+ if(TempData.ContainsKey("name"))
+            name = TempData["name"] as string;
+        
+        TempData.Keep("name"); // Marks the specified key in the TempData for retention.
+        
+@{
+    TempData["name"] = "Steve";
+}
+@TempData["name"]
+
+
+Parse,Tryparse  ,ParseExcat jo
+
+[OutputCache(Duration = 60)]  
+[Authorize]
+[HandleError]  
+
+
+ViewStart ma LayoutPage Define
+
+@RenderBody()
+Tya j Child Page Load Thay
+baki nu badhu Layout
+
+
+Code First
+
+public class Student
+{
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+    public DateTime? DateOfBirth { get; set; }
+    public byte[]  Photo { get; set; }
+    public decimal Height { get; set; }
+    public float Weight { get; set; }
+        
+    public Grade Grade { get; set; }
+}
+public class Grade
+{
+    public int GradeId { get; set; }
+    public string GradeName { get; set; }
+    public string Section { get; set; }
+    
+    public ICollection<Student> Students { get; set; }
+}
+
+public class SchoolContext : DbContext
+    {
+        public SchoolContext() : base("testconnection")
+        {
+        }
+
+
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Grade> Grades { get; set; }
+    }
+
+
+public ActionResult Index()
+    {
+        return View("Index", "_myLayoutPage"); //set "_myLayoutView" as layout view
+    }
+
+
+<connectionStrings>
+		<add name="testconnection"
+			 connectionString="Data Source=DEV41\SQL2016;Initial Catalog=codefirstTest;User Id=sa;Password=Spinx@123;MultipleActiveResultSets=true;" providerName="System.Data.SqlClient" />
+	</connectionStrings>
+
+API
+
+using CodeFirst.Models;
+
+[HttpGet]
+[Route("api/student/Delete/{id}")]
+
+            return "ID =" + id+"<br /> Name="+name;  
+
+public HttpResponseMessage Get(int id)
+{
+
+        return Request.CreateResponse(HttpStatusCode.NotFound, id);
+}
+public IHttpActionResult Get(int id)
+{
+        return NotFound();
+    return Ok(stud);
+
+}
+return student
+return id;
+
+return View();
+View("Page",model);
+
+return RedirectToAction();
+return Partialiew();
+
+GetValueOrDefault();
+
+Right Click --> Add Client Side Library
+
+Bundle and Manage Css, js
+
+Enforce And Enable CLient Side validation
+
+
+Add Mvc Controller
+Add Web Api 2 Controller
+
+<system.web> 
+    <customErrors mode="On"></customErrors>
+</system.web> 
+
+
+
+public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+    {
+        filters.Add(new HandleErrorAttribute());
+    }
+
+nvm list
+nvm use 10.15.1
+npm install
+
+
+Enable-Migrations  
+add-migration InitialCreate  
+update-database

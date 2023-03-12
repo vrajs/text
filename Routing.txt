@@ -1,0 +1,75 @@
+/ nai lakhvanu eni jate lai leOnly Path And COmponent name(Home-->About)
+je path ma lakhyu e j ROuterLink ma naitar Error
+
+Dynamic Routing-->
+e.g Update--->5 vala id ne toh url ma /Update/5 jase toh 5---> Dynamic Routing
+
+Je Page nathi tene Access (Invalid Url)---> 404 Error
+
+path--> **--> app-routing.module.ts -->For Error page
+
+app-->About--->About Me-->child page ni andar pacchi link (& biju pge khule)--->Child ROuting
+
+Service-->Ek jat no class Jema data,Property & FUnctions & aa data ne Multiple FIles ma use
+
+for e.g List Of Students ne 50 Pages Par dekhadvu chhe toh Service Banay & Te Service ne Multiple Components ma Use kar
+
+Alag FOlder ma j Services banavje naitar bahar Aatli badhi Files ma Confuse
+
+Service ma je FUn banayu tene jya b  Use karvu hoy tya Import karvu pade
+
+Jo bahar na folder ma toh --->>'../services/user-data-service.service'
+
+Service-->Api Call--->Api(Database mathi data lave)
+Angular Koi divas Database Jode Connect na thai sake So must have to use Api
+
+Api koi b language ma php,python,.net .....
+Service ma HttpModule hoy te Api ne cal  kare  mate Import kar HttpModule -->Service ma
+
+
+app.module.ts 
+
+import {HttpClientModule} from '@angular/common/http'
+
+
+For Service -->Api call-
+(1)api-call.service.ts ,
+(2)app.component.ts ma and 
+(3)app.component.html 
+(4) app.module.ts 
+no code jo
+
+
+For Routing
+(1)api-call.service.ts ,
+(2)app.component.ts ma and 
+(3)app.component.html 
+(4) app.module.ts 
+(5) app-roting.module.ts
+no code jo
+  
+  Service no data te j Component ma jay Bija nakama Components ma na jay----> Etle Subscribe Lakh
+  
+Jo FormModule import karvanu Bhuli gyo app.module.ts ma to toh From Chalse j nai
+
+
+Model-->Data nu structure and validate kare
+
+for e.g id ma int j javu joie (validate)
+
+Interface ma jetli items define te badhi define karvi j pade (Implements Interface)
+
+and te item ni je data type interface ma tej dataType vai value naitar Error
+
+te Model / Interface ek seperate file ma banay etle pachhi 500 file ma same interface 
+import karine use kari sakay , 500 file ma lakhvani jarur nai
+
+koi vastu ne bahar b use karvani hoy toh teni aagal Export lagad
+
+
+vichitra mota mota name na aap module and components na naitar kasu nai chale???? ()and 
+
+be yaar error aayi alya Because app.module.ts ma te module/Component import karelo j nathi
+Module Ni Andar Component banave tyre
+be yaar haju error aayi , ALya toh te module ni andar Export nathi karelo Component
+Export vagar import na thai sake

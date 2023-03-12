@@ -1,0 +1,202 @@
+Google Search b Chhe aa File ma
+Jo badha Tools--->Strapi--->Ooooho Aakhi APi ja banai ne aapi de
+
+GraphQL--->Query Language For making API
+
+Hot Chocolate is an open-source GraphQL server built for the Microsoft .NET platform. 
+It removes the complexity of building GraphQL APIs from scratch and Provide built-in features
+for queries, mutations, and subscriptions
+ 
+Student na Marks And Name j joie chhe
+Department,Standard nai Jota then use GraphQL
+
+Only One EndPoint
+Je Result joie ---->Only te j Return
+
+Hotchocolate thi GraphQL Api banavo
+
+QueryType (Schema)lakh OtherWise Error
+
+launchsetting.json ma te proj ma badha Configuration
+launchurl .......set kar Etle Proj Run--->Sauthi First te Url j Hit Kare
+
+Map GraphQl Server with Single EndPoint--->That Point Client will Hit & Get Excat data
+
+Badhu HotChoclate thi j karyu chhe
+Channel Name:- Singletonsean
+
+Video-1--> Query For Instruction
+
+Annotation Attributes and data ni value valu nathi karyu Faker Nakamu---->
+Jo Video--2
+
+Refresh Schema in playground
+
+Execute Query
+Schema ma badhu-->Models..ne badhu?
+PlayGround ma Query Run
+Resolve Id
+Rsolve name
+Resolve badhi fields....
+
+Playground ma je joitu hoy te j nakhvanu (50 mathi 2 j field joie toh 2 j fields)??
+Thats Why GraphQl?/
+
+Mara Project ma me Faker thi data aapyo Nath----> So Nai Aave Output
+
+
+Mutation for create,Update,Delete data??
+
+Services ma Register Mutation Type
+
+
+  "launchUrl": "graphql",---->Etle App start ma ../graphql url khule
+  
+services.AddGraphQLServer();
+add badhu kar
+
+InputType--> Model
+Resolver for GetStudents--->GetAll() method badhi Get Requests vali Methods Etle Resolvers
+Resolver Get the data
+
+Model(InputType) ma b Resolver(Methods) lakhi sakay and Biji Property ke Int/String Value return kari sakay
+Jo badha Data Annotation Attributes Ef Code first vala-->Te badha GraphQL ma b 
+
+Fetching data
+Saving/Updating data
+
+1000 mathi khali 200 j property joie chhe-->Then Write only 200 in Query Syntax
+localhost:5000/graphql/<------ Api/Url ? EndPoint
+
+Ek sathe multiple Queries -->Playground ma 
+But teni mate Model(Student) ma Public Department department{get; set;} hovu joie
+
+So Query Syntax will be:-
+
+allStudents{
+	id
+	name
+	...
+	departments{
+	id
+	title
+	...
+  }
+}
+
+Apollo Client is a comprehensive state management library for JavaScript that 
+enables you to manage both local and remote data with GraphQL. 
+Use it to fetch, cache, and modify application data, all while automatically updating your UI.
+
+Invoke the GraphQL endpoint and then capture the response.
+Subscribe The Response
+Interface banay -->Response get karva Same as Model in .net Core
+
+[GraphQLNonNullType]--->Mandatory field
+
+HotChocolate Automatic Remove generic PreFix & Suffix(Eg. Get,Async...) So
+GetCourses() Fun hoy toh Playground ma toh Courses{} j lakhvu pade
+
+Ctrl + SpaceBar--->Intellisense
+Alt+Shift+F (Or Right Click karine Format)
+
+Schema--> Functions,Return Types,Parameters..... Code ma 
+etle Playground ma e mujab nu
+
+Register all query,Subscription,Mutation in Startup class
+
+Je Return Type hoy Fun (GraphQL Api)no te Playground ma {} ma Lakhvu j pade naitar error
+{
+   id
+   firstname
+   salary
+....
+}
+Pass Parameter in Mutation
+
+Injecting Apollo Constructor in Angular
+
+'gql' parse our string GraphQL query to the GraphQL document.
+import Instance from library
+
+The 'data' property contains responses from the GraphQL server. The 'loading' property returns
+a boolean value to represent the completion of the API call
+
+Bind the Response data
+
+Filters in GraphQL Query
+
+Ef to Access data from db
+Define DbSet For each DTO/Models
+Register COntext Class in Services
+Context DbContext mathi Inherit nai karyo hoy toh Error
+Jo Parameterized COnstructor Add kar 
+
+Google Search
+Return Class Object
+
+
+AddScoped Repository
+AddDbContext
+Paging using HotChocolate
+first 3 courses
+
+Curser Pagination
+edges ni Andar nodes & teni andar data 
+node pachhi cursor
+
+before value ni pahela na badha data
+
+For each & every Author Resolver will be called from InputTypes
+Online Guid Generator
+Jo total count
+
+Offset nathi jovanu?
+
+ctrl + spacebar etle intellisense
+
+Custom Filter nathi joyu ???Nakamu
+
+
+IQuerable-->Sorting apply to database Query
+
+Filter and Sort ni pahla lak -->Projection
+koi Query Execute mate if we require some field like Id
+and if we don't specify in PlayGround then error So Use  [IsProjected(true)]
+
+[IsProjected(false)] -->PlayGround ma specify karie to b nai show thay
+
+Jo Include (Foreign key nai thatu )
+
+query {
+  allAuthorsWithPaginationAndSortingAndFiltering(
+    first: 4
+    before: "Mg=="
+    where: {
+      and: [
+        { firstName: { contains: "Joydi" } }
+        { lastName: { eq: "Kanjilal" } }
+      ]
+    }
+    order: { firstName: ASC }
+  ) {
+    edges {
+      node {
+        id
+        firstName
+        lastName
+        blogPosts {
+          id
+          title
+          authorId
+        }
+      }
+      cursor
+    }
+    pageInfo {
+      endCursor
+    }
+    totalCount
+  }
+}
+

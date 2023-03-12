@@ -1,0 +1,26 @@
+1000 Page toh Website Start vakhte 1000 Routes Load 
+etle WebSite Slow in First load
+
+Lazy Load ma je Link(Route) par click tej Module no route khule
+So Fast Speed
+
+Lazy load vakhte app.module.ts ma te Module import na kar
+
+lazy Load Component nathi Joyo Video because module j load nai thay toh 
+teni andar no component kyathi load thavano???
+
+
+1 Class ma Single Responsibilty
+For New Feature Write in new Class
+
+Open for Adding New Shape (Circle) ---> Create new CLass and implements it's area method
+But Modification in Main Area() shouldn't do
+
+When no need Of Inheritance Then Don't use it because for other class,it requires different logic
+
+Keep Interface as Smallest as Possible because we have to implement it's methods so if we don't 
+want to then also need to implement
+
+So for new methods Create another interface
+
+Use Dependency Injection

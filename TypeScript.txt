@@ -1,0 +1,51 @@
+Jo Inheritance & Interface
+
+Angular ma kai b karvu hoy cmd(Command Prompt) ma j vs code na terminal ma nai
+
+Module banai ne---> Same Function/Class/Functionality declare in 2 module
+
+Login for Teacher & Student
+
+ctrl + C -->currently Running Close
+
+
+tsc app.ts --watch/w
+node app.js
+tsc --init(Config File)
+
+
+tsConfig.json
+
+
+very imp config kaya folder ma o/p, kya i/p
+kai file convert , kai nai, kaya feature on off
+
+Jo s.s--->outDir & rootDir no path Aap banne mate Alag Folders(i/p(root directory) & o/p) and tsconfig file main folder ma banne (i/p o/p) folder ni bahar
+app.ts ne i/p folder ma rakh
+And Pacchi run etle badhi .js o/p folder ma Automatic banse
+have badhi ts file i/p(root) folder ma
+
+
+jo bahar na folder ma koi file padi hase and run karva jais toh error(because i/p folder no path aapi didho chhe already config file ma )
+
+,
+"include" : ["src"] 
+
+toh khali-->src vala folder ni andar ni j .js (o/p) file banse biji folder or bahar ni file Ignore(nai bane js) 
+
+
+Generic  -->Function ni Return Type? & Parameter ni data type vare ghadiye declare karvani jarur nai
+Automatic define
+
+function users<T>(data:T):T
+{
+	return data
+}
+console.warn(users(30));
+console.warn(users({name : "vs", age: 18}));
+
+
+classs ni andar fun,properties ni dataType declare karvani jarur nai
+
+jeni limited j value(ena sivay No) --> Use enum
+eg. Gender,Week

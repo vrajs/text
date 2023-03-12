@@ -1,0 +1,141 @@
+Same Time Par Property ne Update And Display--->Two Way Binding
+
+FormModule Import nai karu toh ngModel work karse j nai
+
+username :string="";---> dataType lakhi ne Initialize nai karu toh to Two Way Binding Work
+Karse j nai
+
+#id
+id.value toh TextBox ni Value get thase (.ts ma), id.placeHolder toh te textBox no PlaceHolder,
+id.name toh te Textbox nu name malse
+
+Ts-->Advance Version Of Js
+
+Pipe-->Data nu Format change
+e.g.--> |uppercase
+
+.ts ma .toUpperCase() lake toh sakhat time lage etle Pipe Use kar ,Very easy and Fast
+
+koi navi image/file/css kai b Add kare toh tenu Ek Folder banay(If no FOlder) and tema Muk Naitar 
+khabar j nai pade koni kai file and seni mate??
+
+Forms
+
+(1)Template Driven Form---->.html vala page ma 
+(2) Reactive Form-->.ts file ma
+
+Template(.html file)--->Class(.ts file)--->Service--->Datatbase
+
+Jo name="" & ngModel an Lakhyu toh Error
+(ngSubmit)=userLogin(loginForm.value)
+
+pattern=[a-zA-Z]+$    //Only Accepts String
+
+ngIf,ngFor,ngSwitch,ngHide----->Directives
+
+Te folder ni andar banavi hoy toh cd folderName--->and Pachhi ng new........
+
+//Custom Directive
+value change , color change.... kaik Logic lakh (Tenu Logic Custom Direective banai ne tema lakh)
+and  Pachhi te custom Directive jya use karvo hoy tya lakh
+
+../--->ek folder bahar jay
+./folder/file.txt---> folder ni andar jai ne Search
+
+//Routing Module
+Module wise alag Routing--> (Module Routing)Route alag rakhe  (teni alag routing.module.ts)
+for e.g Admin Modules na routes only in Admin module 
+So user Module valo can't access it-->Perfomance Increase & Speed Up
+
+have jo te module ni seperate routing file banai  toh teni andar na components 
+na routes te moduule ni routing file ma lakh  app.routing ma nai
+
+//Group Routing
+Admin/login
+User/login 
+Toh kayu login ????????
+
+Jo set nai toh Alphabetic wise Route Open thase
+
+Non-String data value mate Always Property Binding Otherwise interpolation
+
+For async operation--->Use promise & Observable
+//promise
+
+    const promise = new Promise(resolve =>{
+      setTimeout(()=>{resolve('Promise Working')},1000)
+    })
+
+    //observable
+
+    const observable = new Observable(subscribe =>{
+      setTimeout(()=>{subscribe.next('Observable Working')},1000)
+    })
+	
+	Jevi Promise Define tevi call, Pachhi koi Listen kare ke nai
+	pan Observable ne koi listen na kare toh No Call
+	
+	Promise return 1 value
+	Observable returns Multiple values
+	etle jyre Multiple data return toh use observable
+	
+	multiple operators on Observable
+	
+	//FormGroup
+  this.contactForm = this.formBuilder.group({
+  firstname: ['', [Validators.required, Validators.minLength(10)]],
+  lastname: ['', [Validators.required, Validators.maxLength(15), Validators.pattern("^[a-zA-Z]+$")]],
+  email: ['', [Validators.required, Validators.email]],
+  gender: ['', [Validators.required]],
+  isMarried: ['', [Validators.required]],
+  country: ['', [Validators.required]],
+  address: this.formBuilder.group({
+    city: ['', [Validators.required]],
+    street: ['', [Validators.required]],
+    pincode: ['', [Validators.required]],
+  })
+});
+
+https://localhost:44346/Api/Employee/AllEmployeeDetails
+
+http://localhost:4760/api/Student
+http://localhost:4760/api/Student/getStudentById?id=1
+http://localhost:4760/api/Student/AddStudent
+
+{
+    
+    "firstName": "kavya                                              ",
+    "lastName": "Shah                                              ",
+    "email": "v@gmail.com                                       ",
+    "course": "Physics                                           ",
+    "createdOn": null,
+    "updatedOn": null
+}
+
+[HttpPost]
+http://localhost:4760/api/Student/DeleteStudent?id=1
+
+
+http://localhost:4760/api/Student/GetAllStudentsWithFilters?firstname=vraj&lastname=shah
+
+http://localhost:4760/api/Student/UpdateStudent
+
+{
+    "studentId": 2,
+    "firstName": "Anurag                                              ",
+    "lastName": "Shah                                              ",
+    "email": "v@gmail.com                                       ",
+    "course": "Physics                                           ",
+    "createdOn": null,
+    "updatedOn": null
+}
+
+*ngIf="!isAddMode"
+
+this.isAddMode = true;..........
+
+https://www.c-sharpcorner.com/article/web-ap/
+
+Company
+
+https://localhost:44396/api/Company

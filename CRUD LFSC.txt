@@ -1,0 +1,14 @@
+create ,read ,update ,delete ,list ,filter(value nakhi ne search button) ,Sort (Column) ,Count(No of Rows)
+
+
+C:/vsProjects ma badha vs na projects
+
+S.S,
+.txt Files,
+Projects
+
+Feedback
+Location Google Map
+For Admin/User Login
+
+ag Grid---> Angular

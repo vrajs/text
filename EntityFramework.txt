@@ -1,0 +1,104 @@
+Code First
+
+First Install Entity Framework
+Each Time all tables drop and re Run Migration???
+
+Enable-Migrations
+add-migration initial
+update-database
+update-database -context EconsysDbContext
+Remove-Migration
+
+No context type found or package Error---> then close Visual Studio and rerun the Project
+
+ <Entity Class Name> + "Id" (case insensitive)--->Automatic Primary key lai le
+ Not mandatory--->Null Chale--->? kar
+ e.g.     public string? Email { get; set; }
+
+jo How???--->DropCreateDatabaseIfModelChanges
+
+DatabaseGeneratedOption.None--->Id(Primary key) ni value aapne aapvi pade automatic na le
+DatabaseGeneratedOption.Identity-->To make Column Identity Column
+
+Cascade Delete
+Automatic delete dependent records and null foreign key column
+
+Foreign Key
+
+Department? department
+departmentId? or DeparmentId(Foreign)
+
+Id(Primary)
+
+Pahela Foreign key valu Table and Pacchi Biju Same on ma b Pahela Foreign valu
+
+Context ma ConnectionString j pass kar??????------->So Use existing db
+ 
+Trusted Conn True,Security-->SSPI e badhu toh Windows Auth mode ma
+One to One ---> 
+
+StudentAddress table
+
+[Key,Foreignkey("Student")]
+Public int StudentId{get; set;}
+
+public Student Student{get; set;}
+
+Student table
+
+Register the Service
+public StudentAddress StudentAddress{get; set;}
+
+		(1)Install EF
+		(2)Jo 1-->1, 1--->Many,Many--->Many
+		(3)????? :base("connstrng")
+		(4)appSettings,json ma Connstring
+
+		Jo Data Annotation Attributes........
+		[Column("CourseName",TypeName="varchar")]
+		
+		Be yaar each time all tables delete andRecreate
+		insert data ni scripts
+
+		Rollback Last Migration --->No Command
+		 update-database -TargetMigration LastMigrationName
+
+
+Raw SQl Queries
+
+int? ---> SO Null Accept kare
+Id or CustomerId (Class name-->Customer) Automatic Primary key banse
+
+If model changes after tables are created in db then error will come
+
+for e.g 1 Column Add kari Model ma and te db table ma nathi then Error
+
+_MigrationHistory ma Model change So Error
+
+Jo Or Pucch koine auto drop andRecreate
+
+Context Class na Constructor ma
+So Write Code to automatic drop database and recreate when model changes
+Jo always drop database 
+
+(Take BackUp of Insert Scripts and reRun Migration Commands)
+
+can not create db bcz it is already in use ----->then close sql server (SSMS)and reOpen
+
+Automated migration  No??
+ Code based Migration
+ 
+ SnapShot ma Configuration jevu ,Jate Na Banay
+ 
+ -verbose khali SQL Command Dekhade db Update mate no
+ 
+ down() method ma -->if RollBack last Migration then which code executed that is written
+ 
+ update-database -TargetMigration LastMigrationName
+ 
+ Video No-17 Self Refrencing Association---> Self Join in Ef jo
+ 
+ Each Time db delete???Kudvenkat evu kare chhe
+ 
+ .Include("Employees") valu nai chaltu 
+ Video No-3 Department sathe Ena Employee

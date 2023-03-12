@@ -1,0 +1,20 @@
+child ma jagya Chooti jay toh Global style ma 
+body{
+margin: 0 
+}
+Aap
+
+ek var header Component banai didho etle pati gyo
+same Component 500 page ma ReUse
+<app-header></app-header>
+
+//Angular Form
+SecondProject ma app(component) ma Form no code
+
+Ahi hu app component ma Form banavu chhu Etle app.module.ts ma Form Module Add kar
+koi bija module ma Add karvu hoy toh tena module.ts ma Add kar
+
+koi Element par click ke hover karie tyare vare 
+ghadie koik vastu ne Show/Hide karvu--->Toggle
+
+*ngIf j vapar , style.display nai

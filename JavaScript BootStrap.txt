@@ -1,0 +1,458 @@
+{
+var x=5;
+}
+bahar b Access
+
+10 **5 -->10 ni ghat 5
+
+var str = "5/12/2020";
+DateTime dt;
+            
+var isValidDate = DateTime.TryParse(str, out dt);
+
+Parse,Tryparst  ,ParseExcat jo
+
+document.getElementById("myH1").setAttribute("class", "democlass"); 
+
+const myObject = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+document.getElementById("demo").innerHTML = myObject.fullName();
+
+var d = new Date();
+
+Array ni badhi InBuilt methods jo
+
+
+"use strict"
+
+Strict mode
+
+var declare na karyo to b error	
+
+Obj delete ,na declare tene Accesss
+Keywords, Eval mab Error
+
+
+
+const txt = '{"name":"John", "age":30, "city":"New York"}'
+const obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+
+var url = webBaseURL + "Product/BulkEdit";
+    var bulkEditModel = JSON.stringify(customers);
+    $.ajax({
+        type: "POST",
+        url: url,
+        dataType: "json",
+        data: bulkEditModel,
+        contentType: "application/json; charset=utf-8",
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let text = fruits.join(" and ");
+
+document.getElementById("demo").innerHTML = text;
+
+let text = "How are you doing today?";
+const myArray = text.split(" ");
+
+document.getElementById("demo").innerHTML = myArray[1]; 
+
+document.getElementById("intro");
+document.getElementsByClassName("name")	
+document.getElementsByTagName("p");
+document.querySelectorAll("p.intro");
+
+<button type="button"
+onclick="document.getElementById('id1').style.color = 'red'">
+Click Me!</button>
+style.visibility='visible'"
+
+
+<h2 onclick="changeText(this)">Click on this text!</h2>
+
+<script>
+function changeText(id) {
+  id.innerHTML = "Ooops!";
+}
+</script>
+
+
+const name = "W3Schools";
+
+// List all Elements
+let text = ""
+for (const x of name) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+
+document.getElementById("p2").style.color = "blue";
+
+document.createElement(element)	
+document.appendChild(element)	
+myTitle = document.getElementById("demo").childNodes[0].nodeValue;
+
+<script>
+const para = document.createElement("p");
+const node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+const element = document.getElementById("div1");
+const child = document.getElementById("p1");
+element.insertBefore(para, child);
+</script>
+
+
+window.location.href
+window.location.pathname
+window.location.port
+
+Alert
+Prompt Box
+Confirm Box
+
+
+<button onclick="setTimeout(myFunction, 3000)">Try it</button>
+
+<script>
+function myFunction() {
+  alert('Hello');
+}
+</script>
+
+By default Browser Close toh Cookie Delete
+
+document.cookie = "username=John Doe"; // Create Cokkie (Sameway Update)
+let x = document.cookie; //Get Cookie(cookie1=value; cookie2=value; cookie3=value;)
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; // For Delete
+
+function checkCookie() {
+  let username = getCookie("username");
+  if (username != "") {
+   alert("Welcome again " + username);
+  } else {
+    username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+      setCookie("username", username, 365);
+    }
+  }
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+sessionStorage.setItem("name","John Doe");
+document.getElementById("demo").innerHTML = sessionStorage.getItem("name");
+
+
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: {
+  car1: "Ford",
+  car2: "BMW",
+  car3: "Fiat"
+  }
+}
+document.getElementById("demo").innerHTML = myObj.cars.car2;
+
+const text = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+const myArr = JSON.parse(text);
+document.getElementById("demo").innerHTML = myArr[0];
+
+
+const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+const obj = JSON.parse(text, function (key, value) {
+  if (key == "birth") {
+    return new Date(value);
+  } else {
+    return value;
+  }
+});
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+
+
+
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
+
+
+same way Stringify() ma b New Date() toj Parse And Stringify thay	
+function goBack() {
+  window.history.back()
+  window.history.forward()	
+}
+
+
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.splice(2, 0, "Lemon", "Kiwi");
+fruits.splice(2, 2);
+
+
+const ages = [3, 10, 18, 20];
+
+function checkAge(age) {
+  return age > 18;
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = ages.find(checkAge);
+}
+
+var first = obj.find(x => x.name == "Sachin");
+
+var data = obj.filter(function (item) { return item.name.includes('Sachin') });
+
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">0</p>
+
+<script>
+const add = (function () {
+  let counter = 0;
+  return function () {counter += 1; return counter;}
+})();
+
+function myFunction(){
+  document.getElementById("demo").innerHTML = add();
+}
+
+
+function EmployeeDetails() {
+  var name: "Mayank";
+  var age = 30;
+  var designation = "Developer",
+  var salary = 10000;
+
+  var calculateBonus = function(amount) {
+    salary = salary + amount;
+  }
+
+  return {
+    name: name,
+    age: age,
+    designation: designation,
+    calculateBonus: calculateBonus
+  }
+}
+
+var newEmployee = EmployeeDetails()
+
+var userName = newEmployee.calculateBonus(1000);
+
+
+JQuery
+
+$("#02").html("<p>Hello World!</p>");
+$("#02").text("hello");
+$("#02").val();
+$("#demo").css("font-size","35px");
+
+$("p").click(function(){
+	$("p").hide();
+	$("p").hide(1000);
+});
+jo w3School Selectors
+
+$("p").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "lightblue");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
+});
+
+
+$.fn.subsub= function() {
+       var that = this;
+        return {
+            "paintRed" : function(){
+                $(that).css("background-color", "red");
+            },
+            "yourOwnFunction1" : function(){
+                 //code here
+             },
+            "yourOwnFunction2" : function(){
+                 //code here
+             }
+        };
+    }
+
+var value1 = {
+          geeks1: 0,
+          geeks2: { topic1: 52, topic2: 100 },
+          geeks3: 97
+        };
+        var value2 = {
+          geeks2: { topic1: 200 },
+          geeks4: 100
+        };
+           
+        // Merge value2 into value1
+        $.extend( value1, value2 );
+           
+        // Assuming JSON.stringify - not available in IE<8
+        $( "#geeks" ).append( JSON.stringify( value1 ) );
+
+
+$("#panel").slideToggle("slow");
+$("div").animate({left: '250px'});
+$("#div1").fadeToggle();
+
+$("#div3").fadeToggle(3000);
+
+
+$("p").hide("slow", function(){
+      alert("The paragraph is now hidden");
+    });
+
+$("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+
+$("p").append("Some appended text.");
+$("p").prepend("Some appended text.");
+
+$("h1, h2, p").addClass("blue");
+$("h1, h2, p").removeClass("blue");
+$("h1, h2, p").toggleClass("blue");
+
+
+Aakhi file te div ma load karva mate load() Fun
+$('#msgDiv').load('/demo.html');
+
+
+$("#div1").width()
+
+
+Bootstrap
+
+Toast
+NavBar
+PopOver
+ScrollSpy
+OffCanvas
+
+Forms
+Grid
+
+
+For Responsive Please Write col-sm-2/3/4
+or md/lg/xl b lakhay
+
+sm e j md
+
+Only 2 in one row
+
+<div class="row">
+    <div class="col-sm-6 bg-primary text-white">50%</div>
+    <div class="col-sm-6 bg-dark text-white">50%</div>
+  </div>
+
+Only 3 in one row
+
+<div class="row">
+    <div class="col-sm-4 bg-primary text-white">33.33%</div>
+    <div class="col-sm-4 bg-dark text-white">33.33%</div>
+    <div class="col-sm-4 bg-primary text-white">33.33%</div>
+  </div>
+  <br>
+
+Jetli Lakie tetli same width in One Row
+
+  <!-- Or let Bootstrap automatically handle the layout -->
+  <div class="row">
+    <div class="col-sm bg-primary text-white">25%</div>
+    <div class="col-sm bg-dark text-white">25%</div>
+    <div class="col-sm bg-primary text-white">25%</div>
+    <div class="col-sm bg-dark text-white">25%</div>
+    <div class="col-sm bg-dark text-white">25%</div>
+  </div>
+  <br>
+
+Jetli Lakie tetli same width in One Row
+    
+  <div class="row">
+    <div class="col bg-primary text-white">25%</div>
+    <div class="col bg-dark text-white">25%</div>
+    <div class="col bg-primary text-white">25%</div>
+    <div class="col bg-dark text-white">25%</div>
+    <div class="col bg-dark text-white">25%</div>
+  </div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+  .ag-theme-alpine {
+    height: 428px;
+     width: 1000px;
+  }
+}
+ 
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+  .ag-theme-alpine {
+    width: 357px;
+    height: 200px;
+   
+  }
+}
+
+ 

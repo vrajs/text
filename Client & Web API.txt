@@ -1,0 +1,28 @@
+i was born in 1997
+i had completed my Graduation in 2018
+i have 3 years of experience
+i am working in CodeTrade since May 2020
+
+
+
+Web Api
+
+Return Types-
+
+HttpResponseMessage
+
+ return Request.CreateResponse(HttpStatusCode.NotFound, id);
+ return Request.CreateResponse(HttpStatusCode.NotFound, "Student Not Found");
+ return Request.CreateResponse(HttpStatusCode.OK, stud);
+ 
+ 
+ IHttpActionResult  
+ 
+ j Use kar , Better than HttpResponseMessage
+ because code is cleaner and easy to read & Unit test becomes Easier
+ 
+ return NotFound()
+ return OK()
+ return Content(HttpStatusCode.NotFound,"Student Not Found");
+ 
+ return BadRequest()

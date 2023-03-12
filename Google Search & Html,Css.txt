@@ -1,0 +1,135 @@
+Html 
+
+Must Include Following:-
+
+ERD(Entity relationShip Diagram)
+SRS Diagram
+DFD()
+Entites
+
+html5 lakhine Enter etle aa badhu Automatic Written
+
+title
+meta,
+<!DOCTYPE HTML>
+lang
+img ma alter
+close html elements
+
+
+Form Attributes, Input types, Input Attributes
+id , name, type, value
+
+max="1979-12-31"
+min=1,max=6
+maxlength,multiple
+pattern="[A-Za-z]{3}"
+placeholder, autofocus, autocomplete?
+Elements (p,div,...)
+
+Angular/TypeScript
+
+Interpolation, Dynamic Data, Binding, Template, Fun, Parameter, Events ,Directives, Module ,
+Child component,Reference variable, 
+Reactive Form, Routing, Child routing, Service, Get data from Api, post,get,put...
+
+Model/ Interface, Module,Group routing, Send HttpGet Request, Property, Validation
+Event handling
+
+
+promise,Observable, Subscribe
+Array,Objects, Object methods, Display obj properties
+
+C#
+
+List(Collection),Class, Object, Exception Handling
+instance
+Add Reference to DataAccessLayer project.
+Add DLL in reference
+
+This View allows the user to edit product and update database through WebAPI 
+
+Api
+
+expose the END-POINT
+parameter binding, Action return type, Data Formats,Media Type Formatters
+Create Get Method...,Consume Get Method, Exception Handling
+
+Media-Type Formatter, Data Formats
+consume Api EndPoint
+
+Http headers:
+Jo Screenshot Content-Type
+Content-Type 
+
+Server return response data or any static FIle
+
+Content Negotiation, MediaType Formatters, Attribute Routing (Other routing)
+Jo Claim Type ,authentication ..., Query String parameter
+
+Raw SQl Query
+
+Sql
+
+Sql Server Profiler
+Sql: BatchStarting
+
+.Net Core
+
+using Dependency injection
+Middleware, Environment Variable, Logging
+
+Register dependent classes
+Jo Identity ? 
+Class Level Attribute
+
+Register the Service
+Add (Configure) Middleware
+
+install Libraries & Packages
+DbSet Properties
+
+Ef Code First
+
+navigation Property, Data Annotaion Attributes, One to many relationship in ef
+remove -migration (Removes last)
+update-database lastMigration(name of last .cs file (look in _MigrationHistry Table))
+
+default convention for Primary key,table, Null Column......
+interact with the database using Entity Framework Core
+Run Command In Package Manager Console
+[Key]
+
+CRUD Google Search
+
+Context Class
+Connection String in appsetting.json 
+Install Packages
+Import Packages in app.module.ts
+
+Css
+
+Overflow: Scroll/auto/visible/hidden
+
+margin: inherit/auto
+
+font-family: Tahoma, Verdana, sans-serif;
+border : 1px solid red
+
+a:hover {
+  color: hotpink;
+}
+
+ z-index: -1;
+ 
+ float:left;
+ justify-content: center;
+  align-items: center;
+  opacity : 1
+  
+  Errors
+  
+  left side join error--->swap join
+  
+  
+

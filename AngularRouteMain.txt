@@ -1,0 +1,55 @@
+Visual Studio Code 
+Html5.   Enter etle aakho code
+Material icon theme install
+Right click kar, 
+Badha menu par click and shortcuts
+Angular extension download(ena jeva)
+
+Alt + 50 line select - - - > edit all  50
+Jo eni jeva bija
+Ctrl + Tab - - > Navigate to tabs
+
+Settings jo badha - - > StartUp file
+Auto save ne badhu jo......
+
+Ek j visual studio code ma 2 project
+
+
+Angular
+
+Simple Component - > app.Module.ts and app. Routing....
+
+Module and Routing
+
+(1). app.module.ts na Declaration ma nai lakhvanu  ma, import ma lakhvanu te module
+
+(2) App-routing.ts
+Lakh.. Module na components and routing
+
+(3). Te module.ts ma export ma component lakh to and toj te module ni bahar teno component use thai sake
+
+
+Routing Module 
+
+(2) nai
+(4) teni routing 😂ma lakh te module na components 
+
+- Aa j use karo because jyre module tyre j tena components load and tyre j tena routing load
+Paachal thi routing file(te module ni jarur padi toh copy paste app-routing and root ni jagya e childRouteFor) 
+
+
+Lazy Load (Sauthi best) 
+
+(1)App-routing. Module
+
+Loadchildern... Then() => jo 
+
+(2)Te module.routing. Ts ma tena components na routes
+
+(3) tena module ma components declare? Auto
+
+(4)App. Component. Html
+
+Admin/login
+
+(5) app module ma nai

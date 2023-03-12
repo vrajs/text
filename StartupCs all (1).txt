@@ -1,0 +1,78 @@
+using BlogPostsManagementSystem.DataAccess;
+using BlogPostsManagementSystem.DataAccess.Context;
+using BlogPostsManagementSystem.GraphQL;
+using BlogPostsManagementSystem.GraphQL.InputTypes;
+using BlogPostsManagementSystem.GraphQL.Mutation;
+using BlogPostsManagementSystem.GraphQL.Queries;
+using BlogPostsManagementSystem.GraphQL.Subscription;
+using BlogPostsManagementSystem.Interface;
+using BlogPostsManagementSystem.Repositories;
+using HotChocolate.AspNetCore;
+using HotChocolate.AspNetCore.Playground;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+namespace BlogPostsManagementSystem
+{
+    public class Startup
+    {
+        public IConfiguration Configuration { get; set; }
+
+        //public Startup(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationDbContext>(opts => opts.UseSqlServer(Configuration.GetSection("ConnectionString:GraphQLDbConnString").Value));
+            //services.AddDbContextFactory<ApplicationDbContext>(
+            //options => options.UseInMemoryDatabase("BlogsManagement"));
+            //services.AddInMemorySubscriptions();
+
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IBlogRepository, BlogPostRepository>();
+            services
+            .AddGraphQLServer()
+            .AddType<AuthorType>()
+            .AddType<BlogPostType>()
+            .AddQueryType<Query>()
+            .AddMutationType<Mutation>()
+            .AddSubscriptionType<Subscription>()
+            .AddFiltering()
+            .AddSorting()
+            .AddProjections();
+
+            services.AddCors();
+        }
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UsePlayground(new PlaygroundOptions
+                {
+                    QueryPath = "/graphql",
+                    Path = "/playground"
+                });
+            }
+            app.UseHttpsRedirection();
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowAnyOrigin());
+            app.UseWebSockets();
+            app
+                .UseRouting()
+                .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapGraphQL();
+                });
+
+        }
+    }
+}

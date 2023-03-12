@@ -1,0 +1,74 @@
+Koi component banayo toh app.module.ts ma Automatically add
+
+app.module.ts ma te component hovo joie (no toh add pan Error)
+
+Header mate Alag Component, Footer mate b & Add in Layout???
+
+set NODE_OPTIONS=--max_old_space_size=8192
+
+
+Ekdum Occho Code Component ma Etle te Component biji 50 Jagya e Use kari Sakay
+
+E j cfolder ni file toh include--> ./filename
+
+Bau occhi styles or style.css mathi Style aave toh 
+inline style use kar or koi event vakhte change color etc..
+
+Module->Complete Feature
+User Auth-->Module
+Login,signUP.forgrt pass--->Module na Component
+Don't ReUse Module
+
+By Default-->app.module.ts
+app.module.ts ma badha components Register
+Module ni andar 1 j file-->pachhi banay teni andar component-->etle te component ni 4 file
+
+main app.module.ts ma badha module register kar naitar 
+te module na components Use j nai thai sake -->jo s.s
+
+app.module.ts ma
+
+import {UserAuthModule} from './user-auth/user-auth.module'
+imports: [
+    BrowserModule,
+    UserAuthModule
+  ],
+
+user-auth module ma import pacchi
+,
+  exports : [
+    SignInComponent
+  ]
+Tutorial 9 if na aavde
+
+fun declaration ma parameter ni dataType biji and call vakhte alag dataType pass toh error
+dec. ma parameter ni dataType lakhvi j padse
+tsConfig.json ma strict mode true chhe etle,kar false
+
+key chhodie tyre keyUp
+
+1 j (keyUp) and fun name :- yellow colour nu toj chalse & id different
+
+Angular ma ;(SemiColon) na karie to b chale
+
+Global style mate style.css-->Aama Style aap ,etle 50 e 50 Component mate same style
+app.component.css ni style toh khali app component mate j
+
+
+Inline css > Component Css > Global(style.css)
+traney ma same id par Style toh pahela internal valu pachhi.....
+Jo Property Binding
+== lakh ===-->Type b match
+
+else if nai Only [ngIf] in Angular
+
+Multiple Cond mate switch case ? if else nai
+
+object(item) print karis toh Khotu([object]) Aavse Etle obj ni property item.name Lakh
+
+multiDimensional/Nested Array
+
+Component delete kare toh app.module.ts mathi b import & Component delete kar
+
+image path Nai aavdtu -->Puchh
+Assets na folder ma images foler banai ne path aapyo toh thayu

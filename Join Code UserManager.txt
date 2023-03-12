@@ -1,0 +1,160 @@
+public async Task<PagedResultWithAnalysisDto<GetOA1LetterRequestForViewDto>> GetAll(GetAllOA1LetterRequestsInput input)
+        {
+            IDisposable filterDisposable = null;
+
+            try
+            {
+                bool isHostView = false;
+                if (AbpSession.MultiTenancySide == MultiTenancySides.Host)
+                {
+                    filterDisposable = UnitOfWorkManager.Current.DisableFilter(AbpDataFilters.MayHaveTenant);
+                    isHostView = true;
+                }
+
+                var oa1LetterServices = _lookup_serviceMasterRepository.GetAll()
+                        .Where(x => x.ServiceMasterValue == ServiceMasterValues.oa1letter);
+                var oa1LetterServiceIDs = oa1LetterServices.Select(c => c.Id).ToArray();
+
+                var projects = _lookup_projectRepository.GetAll().Where(x => !x.IsDeleted);
+                var oa1LetterMappings = _lookup_projectServiceMappingRepository.GetAll()
+                    .Include(e => e.ProjectFk)
+                    .Where(x => oa1LetterServiceIDs.Contains((long)x.ServiceId) && !x.IsDeleted);
+
+                var oa1LetterRequests = from o in projects
+                                        join s1 in oa1LetterMappings
+                                        on o.Id equals s1.ProjectId
+                                        join cu in UserManager.Users.Where(a => a.IsActive && !a.IsDeleted)
+                                        on Convert.ToInt64(o.CreatedBy) equals cu.Id into cj4
+                                        from cu in cj4.DefaultIfEmpty()
+
+                                        join o2 in _lookup_customerRepository.GetAll()
+                                       on o.CustomerId equals o2.Id into j2
+                                        from s2 in j2.DefaultIfEmpty()
+
+                                        join o3 in _lookup_siteRepository.GetAll()
+                                        on o.SiteId equals o3.Id into j3
+                                        from s3 in j3.DefaultIfEmpty()
+
+                                        join o4 in _oA1LetterRequestRepository.GetAll()
+                                        on o.Id equals o4.ProjectId into j4
+                                        from s4 in j4.DefaultIfEmpty()
+
+                                        select new SearchTableDto
+                                        {
+                                            IsActive = s1 != null ? s1.IsActive : true,
+                                            IsDeleted = s1 != null ? s1.IsDeleted : false,
+                                            CreatedBy = s1 != null ? s1.CreatedBy : o.CreatedBy,
+                                            CreatedDate = o.CreatedDate,
+                                            UpdatedBy = s1 != null ? s1.UpdatedBy : o.CreatedBy,
+                                            UpdatedDate = (s4 != null ? (DateTime)s4.UpdatedDate : o.CreatedDate),
+                                            ProjectServiceMappingId = s1 != null ? s1.Id : 0,
+                                            ProjectName = o.ProjectName,
+                                            ProjectID = o.Id,
+                                            CustomerName = s2.CustomerName,
+                                            SiteName = s3.SiteName,
+                                            QuoteDate = s4 == null ? null : s4.QuoteDate,
+                                            OA1LetterRequest = ObjectMapper.Map<OA1LetterRequestDto>(s4),
+                                            LetterStatus = s1 == null ? LetterStatus.Incomplete : (s4 == null ? LetterStatus.Incomplete : (LetterStatus)s4.Status),
+                                            TenantId = o.TenantId,
+                                            //StatusUpdatedDate = s4 != null ? s4.StatusUpdatedDate : o.CreatedDate
+                                            StatusUpdatedDate = (s4 == null) ? ((s1 != null) ? s1.CreatedDate : o.CreatedDate) : s4.StatusUpdatedDate,
+                                            CreatedByUserId = cu != null ? cu.Id : null
+                                        };
+
+                var filteredOA1LetterMappings = oa1LetterRequests.
+                    WhereIf(input.StatusFilter?.Count > 0, x => input.StatusFilter.Contains((int)x.LetterStatus) && x.ProjectServiceMappingId != 0).
+                    OrderBy(input.Sorting ?? "CreatedDate desc");
+
+                var dbList = await filteredOA1LetterMappings.ToListAsync();
+                var results = new List<GetOA1LetterRequestForViewDto>();
+
+                foreach (var o in dbList)
+                {
+                    var res = new GetOA1LetterRequestForViewDto()
+                    {
+                        OA1LetterRequest = ObjectMapper.Map<OA1LetterRequestDto>(o.OA1LetterRequest),
+                        ProjectServiceMappingId = o.ProjectServiceMappingId,
+                        ProjectName = o.ProjectName,
+                        CustomerName = o.CustomerName,
+                        SiteName = o.SiteName,
+                        Status = o.ProjectServiceMappingId == 0 ? (int)LetterStatus.Incomplete : (o.OA1LetterRequest == null ? (int)LetterStatus.Incomplete : (int)o.OA1LetterRequest.Status),
+                        //UserName = Convert.ToInt32(o.CreatedBy) != 0 ? UserManager.GetUserById(Convert.ToInt32(o.CreatedBy)).UserName : "",
+                        CurrentServiceID = oa1LetterServices.WhereIf(o.TenantId != null && o.TenantId != 0, x => x.TenantId == o.TenantId).WhereIf(o.TenantId == null || o.TenantId == 0, x => x.TenantId == null).FirstOrDefault().Id,
+                        CurrentProjectID = o.ProjectID,
+                        StatusUpdatedDate = o.StatusUpdatedDate
+                    };
+
+                    if (o.TenantId != null && TenantManager.FindById((int)o.TenantId) != null)
+                    {
+                        res.TenantName = TenantManager.FindById((int)o.TenantId).Name;
+                        using (UnitOfWorkManager.Current.DisableFilter(AbpDataFilters.MayHaveTenant))
+                        {
+                            if (o.CreatedByUserId != null)
+                            {
+                                res.UserName = Convert.ToInt32(o.CreatedBy) != 0 ? UserManager.GetUserById(Convert.ToInt32(o.CreatedBy)).UserName : "";
+                            }
+                        }
+
+                        if (!String.IsNullOrEmpty(input.Filter))
+                        {
+                            DateTime? localDate = DateHelper.ConvertUTCDateToLocaleDate(o.StatusUpdatedDate);
+
+                            if (o.ProjectName.ToLower().Contains(input.Filter.ToLower())
+                                || (o.SiteName != null && o.SiteName.ToLower().Contains(input.Filter.ToLower()))
+                                || o.CustomerName.ToLower().Contains(input.Filter.ToLower())
+                                || o.LetterStatus.ToString().ToLower().Contains(input.Filter.ToLower())
+                                || o.CreatedBy.ToLower().Contains(input.Filter.ToLower())
+                                //|| o.QuoteDate.ToString().Contains(input.Filter.ToLower())
+                                || (o.QuoteDate != null && o.QuoteDate.HasValue && o.QuoteDate.Value.ToString("dd/MM/yyyy").Contains(input.Filter))
+                                || (localDate.HasValue && localDate.Value.ToString("dd/MM/yyyy HH:mm:ss").Contains(input.Filter))
+                                || (localDate.HasValue && localDate.Value.ToString("dd/MM/yyyy hh:mm:ss").Contains(input.Filter))
+                                || (!string.IsNullOrEmpty(res.UserName) && res.UserName.ToLower().Contains(input.Filter.ToLower()))
+                                || (AbpSession.MultiTenancySide == MultiTenancySides.Host && res.TenantName.ToLower().Contains(input.Filter.ToLower())))
+                            {
+                                if (o.OA1LetterRequest == null)
+                                {
+                                    results.Add(res);
+                                }
+                                else if (o.OA1LetterRequest != null && !o.OA1LetterRequest.IsDeleted)
+                                {
+                                    results.Add(res);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (o.OA1LetterRequest == null)
+                            {
+                                results.Add(res);
+                            }
+                            else if (o.OA1LetterRequest != null && !o.OA1LetterRequest.IsDeleted)
+                            {
+                                results.Add(res);
+                            }
+                        }
+                    }
+                }
+
+                var pagedAndFilteredOA1Mappings = results.Skip(input.SkipCount).Take(input.MaxResultCount).ToList();
+                int totalCount = results.Count();
+
+                return new PagedResultWithAnalysisDto<GetOA1LetterRequestForViewDto>(
+                    totalCount,
+                    pagedAndFilteredOA1Mappings,
+                    isHostView
+                );
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex.Message);
+                return new PagedResultWithAnalysisDto<GetOA1LetterRequestForViewDto>(
+                    0,
+                    null,
+                    false
+                );
+            }
+            finally
+            {
+                filterDisposable?.Dispose();
+            }
+        }

@@ -1,0 +1,37 @@
+Service-proxies.ts 
+
+Kudvenkat ni Text version od Video, Ppt ke Website jo .Net core, Linq, Web Api
+Service-proxies.ts
+Badhi api call
+
+Swagger mathi serach mar visual studio ma method nu name, Controller nu nai
+
+2 kadach hoi sake service Angular ma biji setvice-proxies.ts
+
+Update ni script fari run - - - - > url
+Skype vali url nai
+Ngonint() par phone number +44.?
+
+IdentityDbContext
+IdentityUser:- User ni badhi Properties
+IdentityRoles
+Jo video....
+
+UserManager
+SignInManager
+IsPersistent = false-->(SessionCookie) browser close then session removed
+
+Register etle   AspUsers tavle ma entry
+
+Jo 73 mo video:- use local url for Url vulnerability
+
+UserManager.FindByEmail()
+Google search :- Server side method
+
+Custom validation
+IdentityUser
+Custom fields inBuilt table ma add...
+Jo Screenshot
+
+AspNetRiles table ma Roles store
+RoleManager, IdentityRole 

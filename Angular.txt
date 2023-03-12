@@ -1,0 +1,174 @@
+Browser No Reload -Single Page App
+Very fast
+Open Source , MVC frameWork
+npm Package add(jquery,bootstrap) CLI thi add
+
+any na khis bau j Kharab --> Proper dataType declare kar
+Initialize vakhte dataType eni jate lai le-->no need to define but kar??????
+
+.ts mathi .html ma show karva mate  {{}}
+myFun(){}---> .ts file ma  toh .html ma {{myFun()}} b laki sakay
+
+{{}} (InterPolation) thi na thay toh []=  (Property Binding)
+
+PreWritten value in textbox--->  value={{name}}  OR  [value]=name
+
+(click) = "myFun()"
+
+Blur--->Focus hati jay
+#box (blur) = "myFun(box.value)"
+(mouseover) = "myfun('over')"
+
+<h1 *ngIf="show; then ifblock else elseBlock"></h1>
+
+<ng-template #ifBlock>
+  <h1>.....
+  ....
+</ng-template>
+
+<ng-template #elseBlock>
+  <h1>.....
+  ....
+</ng-template>
+
+
+<ng-template [ngIf]= "color=='red'">
+....
+</ng-template>
+
+  this.router.navigateByUrl('/admin-dashboard');
+  
+  
+<div [ngSwitch]="color">
+
+<h1  *ngSwitchCase = "'red'">Red Colour</h1>
+<h1  *ngSwitchDefault >Default Colour</h1>
+
+data : number = 20;
+data : string = "vraj";
+data : number | boolean 
+data : any
+objectVar: {id:number,name:string}   //object
+arrayVar : string[]=["suresh","mahesh","mukesh"];   //Array(string 	Type Array)
+
+Browser js j Samje Etle ts-->js ma convert kare
+
+ts ma DataType Declare kar etle unWanted Error thi bachay (Compile time j .ts file ma Error Khabar padi jay jyre js ma Aavu na thay)
+
+npm install -g @angular/cli   (g etle Globally, game te folder ma install karay)
+clear  (badha commands & o/p clear in Terminal)
+
+ng build (folder banavse and pacchi te Folder Server par Deploy)
+
+//Add ag-Grid
+npm i ag-grid-community
+npm install --save ag-grid-angular
+npm install --save ag-grid-community
+Add cdn
+
+npm audit fix -->Update Package and remove Dependencies
+Alt + Z --> Word Wrap
+ctrl +c -->Close Running Project CLI
+
+Only src Folder j Copy Paste
+
+//main -->Create & Run command
+ng new vraj
+cd vraj
+code .  (vs code ma Project Open)
+ng serve
+
+//jo na chale toh
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass  (if vs code na Terminal ma Error)
+set NODE_OPTIONS=--max_old_space_size=8192
+
+
+npm install uri-js   //If Error
+
+//Add Routing
+ng generate module app-routing --flat --module=app
+//Add Seperate Routing for Module
+ng g m admin --routing
+
+//Bootstrap For Responsive
+ng add @ng-bootstrap/ng-bootstrap
+bas and pachhi Project ma Add
+J0 eni Website mathi Live Db mathi fetch karine Sort,page,List ,Toast,OffCanvas badhu very good
+//
+
+bootstrap and material UI aapna Project ni andar j Add kar bahar nai(project Folder ni)
+
+//material Ui (Bootstrap thi saru???) Slower than Bootstrap
+ng add @angular/material
+(1)import { MatSliderModule } from '@angular/material/slider'; //Declare
+(2)And  Imports ma MatSliderModule lakh
+(3)<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+Copy paste html,css,ts From Official WebSite
+
+Same id and Same Fun Name toh Error
+app.module.ts ma badha Material na import and Module lakh Naitar .html file ma Error
+
+be yaar Aani Effect nai dekhati toh CLI ma Running bandh kari ne 
+Fari ng serve lakh
+
+//pls Add
+Jo te module import karvanu bhuli gyo app.module.ts ma toh Chalse j nai jemke Button mate--->MatButtonModule,icon mate-->MatIconModule
+//while installing packages
+Y-->yes kar(while creating new Project)
+y-->na yes na karis
+
+//Component
+ng g c login (src/app ni andar banse)
+//module
+ng g m user-auth
+//Module ni andar Components
+ng g c user-auth/sign-in
+//
+
+te module ni Andar Etle tenu name/ karine banay naitar te module ni bahar banse
+Jevo Component banayo tevo module ma automatic declare
+
+//class
+ng generate class Dummy
+app ni andar
+//
+
+node_modules ma badhi libraries
+Aa folder ma kaso change nai
+
+Assests-->extra css,images
+
+environment ma pachhi bija add dev/pro/test
+favicon--> browser ma title ni baju ma chhek upper
+
+style.css -->Global css
+
+angular.json-->Main Config File
+
+browser ts na samje etle js ma convert
+tsconfig.json-->Global Configuration
+tsconfig.app.json-->App Configuration
+tsconfig.spec.json-->Testing Configuration
+
+index.html-->app.component.html-->Bau badho code
+Start Up valo code app mathi aave
+
+.html ma change and page Reload
+aakho project fari Run nai
+
+{{data}}-->InterPolation--> .ts to .html
+Component-->UI Building Block
+
+By Default badho code(Component) src/app ni Andar j kar and 
+tya j banse -->command lakhti vakhte No need to give path
+
+module bau motu , component Small --> module ni andar component
+
+domain purchase kar hosting mate and tya project Upload DEploy kar
+etle te Url khole etle Project dekhay
+
+Dynamic Style--->.ts mathi style laine .html ma Apply
+e.g. [style.color]="colorPeak" ,[style.font],[style.backgroundColor]
+
+Same Id and Same FunName toh Error

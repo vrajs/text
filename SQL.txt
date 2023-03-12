@@ -1,0 +1,88 @@
+The following SQL statement selects all customers with a City starting with "b", "s", or "p":
+
+SELECT * FROM Customers
+WHERE City LIKE '[bsp]%';	
+
+no toh Not Like
+
+The following SQL statement selects all customers with a City starting with "a", "b", or "c":
+
+SELECT * FROM Customers
+WHERE City LIKE '[a-c]%';
+
+
+SELECT * FROM Customers
+WHERE NOT Country='Germany';
+
+SELECT TOP 3 * FROM Customers;
+SELECT TOP 50 PERCENT * FROM Customers;
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a%';
+
+SELECT * FROM Customers
+WHERE Country IN (SELECT Country FROM Suppliers);
+
+SELECT * FROM Products
+WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+Same Column Toj Join
+jo Join vali column ni e value Bija Table ma na hoy toh e row aavse j nai Pachhi bhale Full Join Hoy
+
+Union  Means Sum no Mapping Column
+
+Union All ma badhi values aavse(Te Column ni)But Same Column j hovi joie,same  number,same data type and distinct toh Union
+
+The following SQL statement selects all orders with customer and shipper information:
+
+SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+FROM ((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
+
+
+The following SQL statement will select all customers, and any orders they might have:
+
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER BY Customers.CustomerName;
+
+Self Join ma aa Cond Add kar naitar Same(Duplicate) Values Aavse
+and A.CustomerId <> B.CustomerId
+
+
+Cross join = full join = full outer join
+
+Join = Inner Join	
+
+
+Sub-Query ,Any ,Exist No--> Only Join and use Distinct
+
+Jarur Pade toh Use 
+
+
+SELECT 'Customer' AS Type, ContactName, City, Country
+FROM Customers
+
+
+The following SQL statement creates a backup copy of Customers:
+
+SELECT * INTO CustomersBackup2017
+FROM Customers;
+
+
+Generate Scripts etle te db/dbs/Table ni andar jetlo change karyo / je queries perform kari te badha ni ek script file (.sql) file banse
+
+pachhi backup mate e .sql file ne bija nava db ma execute kar (db valo aakho part remove karine because)
+
+
+500 line ni moti .sql file ma 10-15 line pachhi GO(te query(batch) pachhi)
+
+GO etle te batch Complete
+mate GO pachhi na koik var access karie and te go ni pahela declare 
+toh error

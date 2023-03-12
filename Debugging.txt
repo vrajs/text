@@ -1,0 +1,29 @@
+Debugging
+
+Watch window
+
+Name ma lakh each var nu name
+So each time teni value display thase
+
+Shift  + F11--> exit from current fun..
+
+Be yaar aano data type kayo?? -  var
+
+Sql server profiler ma jo sql query(converted from liq) - - > Batch completed, jo tya sachu output aave chhe??
+
+
+
+var customersWithOrderDetails = context.Customers.Include("Orders").ToList() ;
+Contains
+
+. Select(new=>
+
+Why dto???
+
+Je property db ma bind na karvi hoy toh e na lakh, student and department banne ek j dto ma so 1 j call ma puru
+
+First 2 and web. Host??
+
+.Net core and Angular nu sikh badhu
+
+Pass data, identity. Role based...  
